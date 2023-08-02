@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Restaurant{% endblock %}
+
+{% block card %}
+{% comment %} {% block navbar %}{{block.super}} {% endcomment %}
+<div class="container text-center">
+  <h1 class='pt-2 text-primary-emphasis'>Welcome To Django Restaurant</h1>
+
+  <div class="row">
+    {% for meal in meals %}
+    <div class="col pt-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{{meal.strMealThumb}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{meal.strMeal}}</h5>
+          <p class="card-text">{{meal.idMeal}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+    
